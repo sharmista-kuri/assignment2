@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-const Home = ({ addToCart, addToWishlist, removeFromWishlist, wishlist }) => {
+const Home = ({ addToCart, addToWishlist, removeFromWishlist, wishlist, searchTerm }) => {
   const [products, setProducts] = useState([]);
   const [feedback, setFeedback] = useState('');
   const [feedbackType, setFeedbackType] = useState('');
-  const [searchTerm, setSearchTerm] = useState('');
+  // const [searchTerm, setSearchTerm] = useState('');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
 
@@ -72,12 +72,12 @@ const Home = ({ addToCart, addToWishlist, removeFromWishlist, wishlist }) => {
       <h1>Product List</h1>
 
       <div className="filter-form">
-        <input
+        {/* <input
           type="text"
           placeholder="Search by name"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        /> */}
         <input
           type="number"
           placeholder="Min price"

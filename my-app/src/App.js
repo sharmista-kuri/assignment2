@@ -9,6 +9,9 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import './style.css';
 
 const App = () => {
+
+  const [searchTerm, setSearchTerm] = useState('');
+
   // Initialize cart and wishlist from localStorage
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem('cart');
@@ -90,9 +93,9 @@ const App = () => {
 
   return (
     <Router>
-      <Navbar />
+      <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <Routes>
-        <Route path="/" element={<Home addToCart={addToCart} addToWishlist={addToWishlist} removeFromWishlist={removeFromWishlist} wishlist={wishlist} />} />
+        <Route path="/" element={<Home addToCart={addToCart} addToWishlist={addToWishlist} removeFromWishlist={removeFromWishlist} wishlist={wishlist} searchTerm={searchTerm}/>} />
         <Route path="/cart" element={<Cart cart={cart} incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} removeFromCart={removeFromCart} moveToWishlist={moveToWishlistFromCart} />} />
         <Route path="/wishlist" element={<Wishlist wishlist={wishlist} moveToCart={moveToCartFromWishlist} removeFromWishlist={removeFromWishlist} />} />
         <Route path="/product/:id" element={<ProductDetails addToCart={addToCart} addToWishlist={addToWishlist} />} />
