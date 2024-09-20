@@ -105,7 +105,7 @@ const Home = ({ addToCart, addToWishlist, removeFromWishlist, wishlist }) => {
               <div key={product.id} className="image-container">
                   <img src={product.image} alt={product.name} className="product-image" />
                   <i
-                    className={`far fa-heart wishlist-icon ${wishlist.some(item => item.id === product.id) ? 'fas fa-heart in-wishlist' : 'far fa-heart not-in-wishlist'}`}
+                    className={`wishlist-icon ${wishlist.some(item => item.id === product.id) ? 'fas fa-heart in-wishlist' : 'far fa-heart not-in-wishlist'}`}
                     onClick={() => handleAddToWishlist(product)}
                   ></i>
               </div>
