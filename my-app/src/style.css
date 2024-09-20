@@ -5,6 +5,11 @@ body {
     padding: 0;
     background-color: #f0f4f8;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
 }
 
 nav {
@@ -13,6 +18,7 @@ nav {
     text-align: center;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 nav ul {
@@ -36,13 +42,16 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Home Page Styles */
+/* Center the content within the home container */
 .home {
     padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* Set a max width for the content */
 }
 
 .filter-form {
     display: flex;
+    justify-content: center;
     gap: 15px;
     margin-bottom: 20px;
 }
@@ -62,9 +71,11 @@ nav ul li a:hover {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Product List Centering */
 .product-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* Center the product items */
     gap: 20px;
 }
 
@@ -73,7 +84,7 @@ nav ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: calc(33.33% - 20px); /* Three items per row */
+    width: 220px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -104,10 +115,6 @@ nav ul li a:hover {
     transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
 }
 
-.product-item button:hover {
-    background-color: #0056b3;
-}
-
 .product-item button:active {
     transform: scale(0.95);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) inset;
@@ -115,15 +122,23 @@ nav ul li a:hover {
 
 .product-image {
     width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    margin-bottom: 10px;
+    max-width: 200px; /* Adjust the max-width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    display: block; /* Ensure the image is a block element */
+    margin-bottom: 10px; /* Space below the image */
 }
 
 .image-container {
     position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 /* Heart Icon Styles */
@@ -133,21 +148,17 @@ nav ul li a:hover {
     top: 10px;
     right: 10px;
     cursor: pointer;
-    color: #532222; /* Default color for the empty heart */
+    color: #532222; /* Grey color for the empty heart */
     transition: color 0.2s, transform 0.2s;
 }
 
 .wishlist-icon.in-wishlist {
-    color: #3128a7; /* Color for the filled heart */
+    color: #3128a7; /* Blue color for the filled heart */
 }
 
 .wishlist-icon:hover {
-    color: #3128a7; /* Darker color on hover */
-    transform: scale(1.1);
-}
-
-.wishlist-icon:active {
-    transform: scale(1.2); /* Slight bounce effect */
+    color: #3128a7; /* Darker blue on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 /* Feedback Message */
@@ -165,14 +176,6 @@ nav ul li a:hover {
     font-weight: bold;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.feedback.show {
-    visibility: visible;
-    opacity: 1;
 }
 
 .feedback.success {
@@ -183,9 +186,20 @@ nav ul li a:hover {
     background-color: #dc3545;
 }
 
+.feedback.show {
+    opacity: 1;
+}
+
+.feedback.hide {
+    opacity: 0;
+}
+
 /* Cart and Wishlist Styles */
 .cart {
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .cart ul {
@@ -239,17 +253,4 @@ nav ul li a:hover {
 
 .cart ul li button:nth-last-child(2):hover {
     background-color: #e0a800;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .product-item {
-        width: calc(50% - 20px); /* Two items per row on medium screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .product-item {
-        width: 100%; /* Full width on small screens */
-    }
 }
