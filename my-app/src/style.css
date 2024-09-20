@@ -73,7 +73,7 @@ nav ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 220px;
+    width: calc(33.33% - 20px); /* Three items per row */
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -104,6 +104,10 @@ nav ul li a:hover {
     transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
 }
 
+.product-item button:hover {
+    background-color: #0056b3;
+}
+
 .product-item button:active {
     transform: scale(0.95);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) inset;
@@ -111,24 +115,15 @@ nav ul li a:hover {
 
 .product-image {
     width: 100%;
-    max-width: 200px; /* Adjust the max-width as needed */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: rounded corners */
-    object-fit: cover; /* Ensure the image covers the container without distortion */
-    display: block; /* Ensure the image is a block element */
-    margin-bottom: 10px; /* Space below the image */
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
 .image-container {
     position: relative;
-    /* padding-top: 25px;  */
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-    border-radius: 10px;
 }
 
 /* Heart Icon Styles */
@@ -138,21 +133,22 @@ nav ul li a:hover {
     top: 10px;
     right: 10px;
     cursor: pointer;
-    color: #532222; /* Grey color for the empty heart */
-    /* font-size: 24px; 
-    cursor: pointer; */
+    color: #532222; /* Default color for the empty heart */
     transition: color 0.2s, transform 0.2s;
 }
 
 .wishlist-icon.in-wishlist {
-    color: #3128a7; /* Green color for the filled heart */
+    color: #3128a7; /* Color for the filled heart */
 }
 
 .wishlist-icon:hover {
-    color: #3128a7; /* Darker green on hover */
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    color: #3128a7; /* Darker color on hover */
+    transform: scale(1.1);
 }
-  
+
+.wishlist-icon:active {
+    transform: scale(1.2); /* Slight bounce effect */
+}
 
 /* Feedback Message */
 .feedback {
@@ -169,8 +165,14 @@ nav ul li a:hover {
     font-weight: bold;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    /* opacity: 0; */
+    visibility: hidden;
+    opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.feedback.show {
+    visibility: visible;
+    opacity: 1;
 }
 
 .feedback.success {
@@ -181,25 +183,17 @@ nav ul li a:hover {
     background-color: #dc3545;
 }
 
-.feedback.show {
-    opacity: 1;
-}
-
-.feedback.hide {
-    opacity: 0;
-}
-
 /* Cart and Wishlist Styles */
-.cart{
+.cart {
     padding: 20px;
 }
 
-.cart ul{
+.cart ul {
     list-style: none;
     padding: 0;
 }
 
-.cart ul li{
+.cart ul li {
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -211,7 +205,7 @@ nav ul li a:hover {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.cart ul li:hover{
+.cart ul li:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -227,7 +221,7 @@ nav ul li a:hover {
     transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
 }
 
-.cart ul li button:hover{
+.cart ul li button:hover {
     background-color: #0056b3;
 }
 
@@ -247,4 +241,15 @@ nav ul li a:hover {
     background-color: #e0a800;
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .product-item {
+        width: calc(50% - 20px); /* Two items per row on medium screens */
+    }
+}
 
+@media (max-width: 480px) {
+    .product-item {
+        width: 100%; /* Full width on small screens */
+    }
+}
