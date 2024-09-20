@@ -1,0 +1,38 @@
+[
+    { 
+      "id": 1, 
+      "name": "Laptop", 
+      "description": "Description of Product 1", 
+      "price": 29.99,
+      "image": "images/laptop.jpg"
+    },
+    { 
+      "id": 2, 
+      "name": "Mobile", 
+      "description": "Description of Product 2", 
+      "price": 39.99,
+      "image": "images/mobile.avif"
+    },
+    { 
+      "id": 3, 
+      "name": "Laptop", 
+      "description": "Description of Product 1", 
+      "price": 29.99,
+      "image": "images/laptop.jpg"
+    },
+    { 
+      "id": 4, 
+      "name": "Mobile", 
+      "description": "Description of Product 2", 
+      "price": 39.99,
+      "image": "images/mobile.avif"
+    },
+    { 
+      "id": 5, 
+      "name": "Mobile", 
+      "description": "Description of Product 2", 
+      "price": 39.99,
+      "image": "images/mobile.avif"
+    }
+  ]
+  
