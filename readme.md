@@ -5,7 +5,7 @@ This project is a simple e-commerce product page built using React.js and Expres
 ## Project Details
 
 - **Deployed Website**: [http://ec2-54-242-151-34.compute-1.amazonaws.com:3001](http://ec2-54-242-151-34.compute-1.amazonaws.com:3001)
-- **EC2 Instance IP**: `54.242.151.34:3001`
+- **EC2 Instance IP**: `54.242.151.34:3001` (54.242.151.34:3001)
 - **GitHub Repository**: [https://github.com/ICSI518/assignment2-sharmista-kuri.git](https://github.com/ICSI518/assignment2-sharmista-kuri.git)
 
 ## Features
