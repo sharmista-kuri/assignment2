@@ -66,14 +66,14 @@ cp -r build/* ../ecommerce-backend/public/
 2. **Install PM2** on the EC2 instance:
    ```bash
    npm install -g pm2
+````
+   ```bash
+   pm2 start app.js
+````
 
-
-```bash
-pm2 start app.js
-
-
-```bash
-http://54.242.151.34:3001
+   ```bash
+   http://54.242.151.34:3001
+   
 ````
 ## API Documentation
 
