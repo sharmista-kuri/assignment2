@@ -65,4 +65,29 @@ router.get('/check/:productId', async (req, res) => {
   }
 });
 
+// Get a specific wishlist item by productId
+router.get('/item/:productId', async (req, res) => {
+  try {
+    const productId = req.params.productId;
+    console.log('Requested productId:', productId); 
+
+    // Validate if productId is a valid ObjectId
+    if (!mongoose.Types.ObjectId.isValid(productId)) {
+      return res.status(400).json({ message: 'Invalid product ID format' });
+    }
+
+    // Find the specific wishlist item by productId
+    const wishlistItem = await Wishlist.findOne({ productId: new mongoose.Types.ObjectId(productId) });
+    
+    if (!wishlistItem) {
+      return res.status(404).json({ message: 'Wishlist item not found' });
+    }
+
+    res.json(wishlistItem);
+  } catch (err) {
+    console.error('Error in /item/:productId route:', err.message);
+    res.status(500).json({ message: err.message });
+  }
+});
+
 module.exports = router;
