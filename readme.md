@@ -28,36 +28,37 @@ This project is a simple e-commerce product page built using React.js and Expres
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/ICSI518/assignment2-sharmista-kuri.git
-
+````
 ### 2. Backend Setup
 
 Navigate to the backend folder and install dependencies:
 ```bash
 cd ecommerce-backend
 npm install
-
+````
 Start the backend server:
 ```bash
 npm start
-
+````
 ### 3. Frontend Setup
 
 Navigate to the frontend folder and install dependencies:
 ```bash
 cd ../ecommerce
 npm install
-
+````
 Set up environment variables by creating or editing the .env file in the frontend root directory:
 ```bash
 REACT_APP_API_BASE_URL=http://localhost:3000
-
+````
 Build the frontend application:
 ```bash
 npm run build
+````
 Move the build files to the backend public directory:
 ```bash
 cp -r build/* ../ecommerce-backend/public/
-
+````
 ### 4. Deploying on AWS EC2
 
 1. **Upload your project to the EC2 instance**.
@@ -73,7 +74,7 @@ pm2 start app.js
 
 ```bash
 http://54.242.151.34:3001
-
+````
 ## API Documentation
 
 The backend provides several RESTful API routes for managing products, cart, and wishlist:
