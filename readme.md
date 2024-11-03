@@ -67,7 +67,6 @@ cp -r build/* ../ecommerce-backend/public/
    ```bash
    npm install -g pm2
 ````
-   ```bash
    pm2 start app.js
 ````
 
